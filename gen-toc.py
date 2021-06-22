@@ -17,7 +17,8 @@ def gen_toc(mkdocsyml):
                 indent = line.split('-', 1)[0]
 
             if nav and line.startswith(f'{indent}-'):
-                title, mdfile = line[len(indent)+1:].strip().split(':', 1)
+                title, _, mdfile = line[len(indent)+1:].strip().rpartition(':')
+                print(title, mdfile)
                 title = title.strip().strip('\'"')
                 mdfile = mdfile.strip().strip('\'"')
                 if title == 'Home':
