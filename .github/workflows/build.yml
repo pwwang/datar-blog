@@ -24,7 +24,7 @@ jobs:
           cd posts
           cp ../README.md index.md
           # add toc
-          python gen-toc.py >> index.md
+          python ../gen-toc.py >> index.md
           cd ..
           mkdocs build
         if : success()
