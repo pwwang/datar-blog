@@ -1,0 +1,29 @@
+site_name: datar-blog
+site_url: ''
+use_directory_url: false
+docs_dir: posts
+theme:
+    # favicon: favicon.png
+    # logo: favicon.png
+    palette:
+      scheme: slate
+      primary: teal
+    name: 'material'
+    # font:
+    #   text: 'Ubuntu'
+    #   code: 'Ubuntu Mono'
+markdown_extensions:
+    - markdown.extensions.admonition
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.superfences:
+        preserve_tabs: true
+    - toc:
+        baselevel: 2
+plugins:
+    - search # necessary for search to work
+    - git-revision-date
+nav:
+    - 'Home': 'index.md'
+    - 'Porting `dplyr` to python: Efforts been made': 'efforts.md'
