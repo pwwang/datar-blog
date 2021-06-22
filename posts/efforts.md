@@ -103,11 +103,11 @@ that are most commonly used in data processing. But not all verbs and other help
 - Keep `DataFrame` class clean
 
     In order to implement the piping, some of the packages have subclassed, or injected methods to `pandas`' `DataFrame` class, but it may not be necessary.
-
+<!--
 - Thread-safety
 
     None of the packages have seriously considered this issue, especially for those turn verbs into pipeable objects. Since piping in data and deferred evaluation of the verb calls are two different steps, it may cause unexpected results when run in multithreading environment.
-
+-->
 - Support of verb calling as regular function
 
     Some packages may be too focused on the piping implementation that regular verb calling is also supported in `dplyr`, as well as piping calling:

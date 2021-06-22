@@ -7,7 +7,7 @@ theme:
     # logo: favicon.png
     palette:
       scheme: slate
-      primary: teal
+      primary: green
     name: 'material'
     # font:
     #   text: 'Ubuntu'
@@ -27,3 +27,5 @@ plugins:
 nav:
     - 'Home': 'index.md'
     - 'Porting `dplyr` to python: Efforts been made': 'efforts.md'
+    - 'Porting `dplyr` to python: Implementing piping': 'piping.md'
+    - 'Porting `dplyr` to python: Verb argument evaluation': 'verb_args.md'
