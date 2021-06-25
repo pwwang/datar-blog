@@ -1,4 +1,4 @@
-One of the features that I like with `dplyr`/`tidyr` is that the data types are always visible when you print a data frame/tibble out:
+One of the features that I like about `dplyr`/`tidyr` is that the data types are always visible when you print a data frame/tibble out:
 
 ```R
 > library(tidyr)
@@ -56,6 +56,26 @@ Then how can we display those dtypes under the column names just as `dplyr`/`tid
 It looks like this when a data frame is shown in Jupyter Notebook:
 
 ![showing_dtypes](./showing_dtypes.png)
+
+It's sometimes confusing if the data types are invisible. For example:
+
+```python
+>>> table1['year'] = table1['year'].astype(str)
+>>> table1['cases'] = table1['cases'].astype(str)
+>>> table1['sum'] = table1['year'] + table1['cases']
+>>> table1['sum_expected'] = table1['year'].astype(int) + table1['cases'].astype(int)
+>>> table1
+       country     year    cases  population         sum  sum_expected
+      <object> <object> <object>     <int64>    <object>       <int64>
+0  Afghanistan     1999      745    19987071     1999745          2744
+1  Afghanistan     2000     2666    20595360    20002666          4666
+2       Brazil     1999    37737   172006362   199937737         39736
+3       Brazil     2000    80488   174504898   200080488         82488
+4        China     1999   212258  1272915272  1999212258        214257
+5        China     2000   213766  1280428583  2000213766        215766
+```
+
+In such an intended case, we clearly know why the numbers are not adding up, as they are not any of the numeric types.
 
 To implement this, attaching the dtypes to the column names was the inital thought. However, when it comes complicated when the column names have multiple levels (`MultiIndex` object). So then the idea became to insert the dtypes to the first row of the values.
 
