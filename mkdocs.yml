@@ -29,3 +29,4 @@ nav:
     - 'Porting `dplyr` to python: Efforts been made': 'efforts.md'
     - 'Porting `dplyr` to python: Implementing piping': 'piping.md'
     - 'Porting `dplyr` to python: Verb argument evaluation': 'verb_args.md'
+    - 'Showing data types under column names when print pandas data frames': 'showing_dtypes.md'
